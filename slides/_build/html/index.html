@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ChaosTalk#28 &mdash; chaostalk28 1.0 Dokumentation</title>
+
+    
+
+    
+<link rel="stylesheet" href="_static/css/reveal.css">
+<link rel="stylesheet" href="_static/css/theme/league.css" id="theme">
+<link rel="stylesheet" href="_static/lib/css/zenburn.css">
+<link rel="stylesheet" href="_static/revealjs.css" type="text/css" />
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+        if(window.location.search.match(/print-pdf/gi)) {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = '_static/css/print/pdf.css';
+            document.getElementsByTagName('head')[0].appendChild(link);
+        }
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="_static/lib/js/html5shiv.js"></script>
+    <![endif]-->
+      <script type="text/javascript" src="_static/translations.js"></script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        
+  <div class="section" id="chaostalk-28">
+<h1>ChaosTalk#28<a class="headerlink" href="#chaostalk-28" title="Link zu dieser Überschrift">¶</a></h1>
+<section>
+<h2>Herzlich willkommen</h2>
+<a class="first last reference external image-reference" href="&quot;#&quot;"><img alt="&quot;&quot;" class="image" src="_images/28-poster.png" style="width: 450px; height: 636px;" /></a>
+</section>
+<section>
+<h2>Übersicht</h2>
+<ul class="first last simple">
+<li>Arduino Projekt</li>
+<li>Arduino Hardware</li>
+<li>Arduino IDE</li>
+<li>PlatformIO Core</li>
+<li>Atom</li>
+<li>Hands-On</li>
+</ul>
+</section>
+<section>
+<h2>Arduino Projekt</h2>
+<ul class="first last simple">
+<li>Seit 2005</li>
+<li>Entwickler: Massimo Banzi &amp; David Cuartielles</li>
+<li>bis 2008 ca. 50.000 Boards verkauft</li>
+<li>2015 Rechtsstreit um die Marke Arduino</li>
+</ul>
+</section>
+<section>
+<h2>Arduino Hardware</h2>
+<table border="1" class="first last docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Controller</th>
+<th class="head">Boards</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>ATmega 328</td>
+<td>12</td>
+</tr>
+<tr class="row-odd"><td>ATmega 32u4</td>
+<td>4</td>
+</tr>
+<tr class="row-even"><td>ARM Cortex M0</td>
+<td>Arduino Zero</td>
+</tr>
+<tr class="row-odd"><td>ARM Cortex M3</td>
+<td>Arduino Due</td>
+</tr>
+<tr class="row-even"><td>Quark x86</td>
+<td>Genuino 101</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+<h2>Arduino IDE</h2>
+<ul class="first last simple">
+<li>Basis Processing</li>
+<li>JAVA</li>
+<li>Serial Terminal stürzt gerne mal ab</li>
+<li>Keyword-Lists für Libraries</li>
+<li>IDE versteht C/C++ nicht</li>
+</ul>
+</section>
+<section>
+<h2>PlatformIO Core</h2>
+<ul class="first last simple">
+<li>Unified Debugger</li>
+<li>Remote</li>
+<li>Unit Testing</li>
+<li>Continuous Integration</li>
+</ul>
+</section>
+<section>
+<h2>PlatformIO Core Install</h2>
+<pre class="first last">
+<code data-trim contenteditable>pip install -U platformio</code></pre>
+</section>
+<section>
+<h2>PIO-Spielwiese: Boards</h2>
+<pre class="first last">
+<code data-trim contenteditable># Alle Boards auflisten
+
+platformio boards
+
+> Platform: atmelavr
+> --------------------------------------------------------------------------------
+> ID                    MCU            Frequency  Flash   RAM    Name
+> --------------------------------------------------------------------------------
+> bluefruitmicro        ATMEGA32U4     8Mhz      28kB    2.5kB  Adafruit Bluefruit
+> feather32u4           ATMEGA32U4     8Mhz      28kB    2.5kB  Adafruit Feather
+> flora8                ATMEGA32U4     8Mhz      28kB    2.5kB  Adafruit Flora
+> ...</code></pre>
+</section>
+<section>
+<h2>PIO-Spielwiese: Boards Filter</h2>
+<pre class="first last">
+<code data-trim contenteditable># pio boards [OPTIONS] [FILTER]
+
+pio boards ATMEGA32U4
+
+> Platform: teensy
+> --------------------------------------------------------------------------------
+> ID                    MCU            Frequency  Flash   RAM    Name
+> --------------------------------------------------------------------------------
+> teensy20              ATMEGA32U4     16Mhz     31kB    2.5kB  Teensy 2.0</code></pre>
+</section>
+<section>
+<h2>PIO-Spielwiese: Neues Projekt erstellen</h2>
+<pre class="first">
+<code data-trim contenteditable>platformio init --board uno --board nodemcuv2 --board teensy31</code></pre>
+<pre class="last">
+<code data-trim contenteditable>Resultat: platformio.ini
+
+[env:uno]
+platform = atmelavr
+framework = arduino
+board = uno
+
+[env:nodemcuv2]
+platform = espressif8266
+framework = arduino
+board = nodemcuv2
+
+[env:teensy31]
+platform = teensy
+framework = arduino
+board = teensy31</code></pre>
+</section>
+<section>
+<h2>Atom</h2>
+<ul class="first last simple">
+<li>C/C++ Intelligent Code Completion</li>
+<li>C/C++ Smart Code Linter for rapid professional development</li>
+<li>Library Manager for the hundreds popular libraries</li>
+<li>Multi-projects workflow with multiple panes</li>
+<li>Themes support with dark and light colors</li>
+<li>Serial Port Monitor</li>
+<li>Built-in Terminal</li>
+</ul>
+</section>
+<section>
+<h2>Hands-On HINWEIS</h2>
+<pre class="first last">
+<code data-trim contenteditable>Linux Users:
+Ubuntu/Debian users may need to add own “username” to the “dialout”
+group if they are not “root”, doing this issuing a
+
+sudo usermod -a -G dialout yourusername.
+
+Install “udev” rules file 99-platformio-udev.rules
+(an instruction is located in the file).
+Raspberry Pi users, please read this article Enable serial port on
+Raspberry Pi.
+
+Windows Users: Please check that you have correctly installed
+USB driver from board manufacturer
+
+https://github.com/platformio/platformio-core/blob/develop/scripts/99-platformio-udev.rules</code></pre>
+</section>
+<section>
+<h2>It's dangerous to go alone!</h2>
+<h3>take one of these</h3>
+<div class="first">    <tr>
+            <td><img src="_images/atom.png" alt="" border=0 height=128 width=128></img></td>
+            <td><img src="_images/emacs.png" alt="" border=0 height=128 width=128></img></td>
+    <td><img src="_images/cloud9.png" alt="" border=0 height=128 width=128></img></td>
+    <td><img src="_images/vim.png" alt="" border=0 height=128 width=128></img></td>
+    <td><img src="_images/che.png" alt="" border=0 height=128 width=128></img></td>
+</tr></div><p class="last"><a class="reference external" href="http://docs.platformio.org/en/latest/ide/atom.html">http://docs.platformio.org/en/latest/ide/atom.html</a></p>
+</section>
+<section>
+<h2>Danke an</h2>
+<ul class="first last simple">
+<li><a class="reference external" href="https://pypi.python.org/pypi/sphinxjp.themes.revealjs/">https://pypi.python.org/pypi/sphinxjp.themes.revealjs/</a></li>
+</ul>
+</section>
+</div>
+
+
+      </div>
+    </div>
+    
+<script src="_static/js/jquery.min.js"></script>
+<script src="_static/lib/js/head.min.js"></script>
+<script src="_static/js/reveal.js"></script>
+    <script>
+
+      // change DOM for reveal.js
+      $("div.section h1").remove();
+      var content = $("div.section").html();
+      $("div.section").remove();
+      $("div.slides").html(content);
+
+      Reveal.initialize({
+        width: 960,
+        height: 700,
+
+        margin: 0.1,
+
+        minScale: 0.2,
+        maxScale: 1.0,
+
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        keyboard : true,
+        overview: true,
+        touch: true,
+        loop: false,
+        rtl: false,
+        fragments: true,
+
+        autoSlide: 0,
+        mouseWheel: false,
+        rollingLinks: false,
+        previewLinks: false,
+
+        transitionSpeed: "default",
+        backgroundTransition: "default",
+
+        slideNumber: false,
+        embedded: false,
+        autoSlideStoppable: true,
+        hideAddressBar: true,
+
+        parallaxBackgroundImage: "",
+        parallaxBackgroundSize: "",
+
+        focusBodyOnPageVisiblityChange: true,
+
+        viewDistance: 3,
+
+        transition: Reveal.getQueryHash().transition || "default",
+
+        
+
+        dependencies: [
+           { src: '_static/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+           { src: '_static/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+           { src: '_static/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+           { src: '_static/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+           { src: '_static/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+           { src: '_static/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+    </script>
+    
+  </body>
+</html>
