@@ -68,8 +68,11 @@ ChaosTalk#28
 
     pip install -U platformio
 
-.. revealjs:: PIO-Spielwiese: Boards
-
+.. revealjs:: Playground 
+  :title-heading: h2
+  :subtitle: Boards
+  :subtitle-heading: h4
+ 
   .. rv_code::
 
    # Alle Boards auflisten
@@ -86,7 +89,10 @@ ChaosTalk#28
    > ...
 
 
-.. revealjs:: PIO-Spielwiese: Boards Filter
+.. revealjs:: Playground 
+  :title-heading: h2
+  :subtitle: Boards Filter
+  :subtitle-heading: h4
 
   .. rv_code::
 
@@ -100,7 +106,10 @@ ChaosTalk#28
    > --------------------------------------------------------------------------------
    > teensy20              ATMEGA32U4     16Mhz     31kB    2.5kB  Teensy 2.0
 
-.. revealjs:: PIO-Spielwiese: Neues Projekt erstellen
+.. revealjs:: Playground 
+  :title-heading: h2
+  :subtitle: Projekt erstellen
+  :subtitle-heading: h4
 
   .. rv_code::
 
@@ -124,8 +133,37 @@ ChaosTalk#28
     platform = teensy
     framework = arduino
     board = teensy31
+	
+.. revealjs:: Playground 
+  :title-heading: h2
+  :subtitle: main.cpp
+  :subtitle-heading: h4
 
+  .. rv_code::
 
+    vim src/main.cpp
+
+  .. rv_code::
+
+    #include "Arduino.h"
+    void setup()
+    {
+		// initialize
+    }
+    void loop()
+    {
+		// main loop
+    }
+	
+.. revealjs:: Playground 
+  :title-heading: h2
+  :subtitle: Build & Upload
+  :subtitle-heading: h4
+
+  .. rv_code::
+
+    platformio run --target upload
+  
 .. revealjs:: Atom
 
   * C/C++ Intelligent Code Completion
@@ -172,9 +210,21 @@ ChaosTalk#28
     </tr>
 
   http://docs.platformio.org/en/latest/ide/atom.html
-		
+  
+.. revealjs:: Quellen
 
-.. revealjs:: Danke an
+  * http://docs.platformio.org/en/latest/
+  * https://www.arduino.cc/
+  * https://de.wikipedia.org/wiki/Arduino_(Plattform)
+  * https://atom.io/
+  
+.. revealjs:: Erstellt mit
 
+  Sphinx
+  
+  * http://www.sphinx-doc.org
+  
+  sphinxjp.themes.revealjs
+  
   * https://pypi.python.org/pypi/sphinxjp.themes.revealjs/
 

@@ -119,7 +119,8 @@
 <code data-trim contenteditable>pip install -U platformio</code></pre>
 </section>
 <section>
-<h2>PIO-Spielwiese: Boards</h2>
+<h2>Playground</h2>
+<h4>Boards</h4>
 <pre class="first last">
 <code data-trim contenteditable># Alle Boards auflisten
 
@@ -135,7 +136,8 @@ platformio boards
 > ...</code></pre>
 </section>
 <section>
-<h2>PIO-Spielwiese: Boards Filter</h2>
+<h2>Playground</h2>
+<h4>Boards Filter</h4>
 <pre class="first last">
 <code data-trim contenteditable># pio boards [OPTIONS] [FILTER]
 
@@ -148,7 +150,8 @@ pio boards ATMEGA32U4
 > teensy20              ATMEGA32U4     16Mhz     31kB    2.5kB  Teensy 2.0</code></pre>
 </section>
 <section>
-<h2>PIO-Spielwiese: Neues Projekt erstellen</h2>
+<h2>Playground</h2>
+<h4>Projekt erstellen</h4>
 <pre class="first">
 <code data-trim contenteditable>platformio init --board uno --board nodemcuv2 --board teensy31</code></pre>
 <pre class="last">
@@ -168,6 +171,28 @@ board = nodemcuv2
 platform = teensy
 framework = arduino
 board = teensy31</code></pre>
+</section>
+<section>
+<h2>Playground</h2>
+<h4>main.cpp</h4>
+<pre class="first">
+<code data-trim contenteditable>vim src/main.cpp</code></pre>
+<pre class="last">
+<code data-trim contenteditable>#include "Arduino.h"
+void setup()
+{
+            // initialize
+}
+void loop()
+{
+            // main loop
+}</code></pre>
+</section>
+<section>
+<h2>Playground</h2>
+<h4>Build & Upload</h4>
+<pre class="first last">
+<code data-trim contenteditable>platformio run --target upload</code></pre>
 </section>
 <section>
 <h2>Atom</h2>
@@ -212,8 +237,22 @@ https://github.com/platformio/platformio-core/blob/develop/scripts/99-platformio
 </tr></div><p class="last"><a class="reference external" href="http://docs.platformio.org/en/latest/ide/atom.html">http://docs.platformio.org/en/latest/ide/atom.html</a></p>
 </section>
 <section>
-<h2>Danke an</h2>
+<h2>Quellen</h2>
 <ul class="first last simple">
+<li><a class="reference external" href="http://docs.platformio.org/en/latest/">http://docs.platformio.org/en/latest/</a></li>
+<li><a class="reference external" href="https://www.arduino.cc/">https://www.arduino.cc/</a></li>
+<li><a class="reference external" href="https://de.wikipedia.org/wiki/Arduino_(Plattform">https://de.wikipedia.org/wiki/Arduino_(Plattform</a>)</li>
+<li><a class="reference external" href="https://atom.io/">https://atom.io/</a></li>
+</ul>
+</section>
+<section>
+<h2>Erstellt mit</h2>
+<p class="first">Sphinx</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.sphinx-doc.org">http://www.sphinx-doc.org</a></li>
+</ul>
+<p>sphinxjp.themes.revealjs</p>
+<ul class="last simple">
 <li><a class="reference external" href="https://pypi.python.org/pypi/sphinxjp.themes.revealjs/">https://pypi.python.org/pypi/sphinxjp.themes.revealjs/</a></li>
 </ul>
 </section>
