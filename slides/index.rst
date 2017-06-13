@@ -217,6 +217,7 @@ ChaosTalk#28
   * https://www.arduino.cc/
   * https://de.wikipedia.org/wiki/Arduino_(Plattform)
   * https://atom.io/
+  * https://learn.adafruit.com/tmp36-temperature-sensor?view=all
   
 .. revealjs:: Erstellt mit
 
